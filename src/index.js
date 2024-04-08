@@ -2,7 +2,6 @@ const path = require('path');
 var createError = require('http-errors');
 
 const express = require('express');
-const morgan = require('morgan');
 const exphbs = require('express-handlebars');
 const helpers = require('./handlebarsHelpers');
 //store token
