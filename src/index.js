@@ -1,5 +1,6 @@
 const path = require('path');
 var createError = require('http-errors');
+import sslRedirect from 'heroku-ssl-redirect';
 
 const express = require('express');
 const exphbs = require('express-handlebars');
@@ -7,7 +8,7 @@ const helpers = require('./handlebarsHelpers');
 //store token
 var cookieParser = require('cookie-parser');
 const session = require('express-session');
-
+app.use(sslRedirect());
 const app = express();
 app.use(session({
     resave:true,
