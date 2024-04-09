@@ -8,7 +8,6 @@ const helpers = require('./handlebarsHelpers');
 //store token
 var cookieParser = require('cookie-parser');
 const session = require('express-session');
-app.use(sslRedirect());
 const app = express();
 app.use(session({
     resave:true,
@@ -17,7 +16,7 @@ app.use(session({
     cookie:{maxAge: 300000}}))
     
 app.use(cookieParser());
-
+app.use(sslRedirect());
 const port = process.env.PORT || 3000;
 
 const route = require('./routes'); //./routes/index.js
